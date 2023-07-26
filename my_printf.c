@@ -59,15 +59,8 @@ opr to_p[] = {
 					break;
 				}
 			}
-			if (j == 2)
-			{
-				_putchar('%');
-				_putchar(format[i]);
-				i++;
-			}
 		}
-		else
-			_putchar(format[i]);
+		_putchar(format[i]);
 		i++;
 	}
 	va_end(list);
