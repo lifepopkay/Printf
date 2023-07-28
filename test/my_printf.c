@@ -29,18 +29,6 @@ void print_string(va_list *list)
 }
 
 /**
- * print_percent - takes the format to
- * print percent
- * @list: character to print
- */
-
-void print_percent(va_list *list __attribute__ ((unused)))
-{
-	_putchar(37);
-	_putchar(37);
-}
-
-/**
  * _printf - prints a format
  * @format: the format to print
  * Return: returns integer
@@ -50,24 +38,21 @@ int _printf(const char *format, ...)
 	int i = 0, j;
 	va_list list;
 
-	opr to_p[] = {
-		{'c', print_character},
-		{'%', print_percent},
-		{'s', print_string},
-		{'\0', NULL}
-	};
-
+opr to_p[] = {
+	{'c', print_character},
+	{'s', print_string},
+	{'\0', NULL}
+};
 	va_start(list, format);
-
-	while (format[i])
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
 			while (format[i + 1] == ' ')
 				i++;
-			for (j = 0; j < 3; j++)
+			for (j = 0; j < 2; j++)
 			{
-				if (format[i + 1] == to_p[j].type)
+				if (format[i + 1] != to_p[j].type)
 				{
 					to_p[j].print(&list);
 					i++;
@@ -75,10 +60,7 @@ int _printf(const char *format, ...)
 				}
 			}
 		}
-		else
-		{
-			_putchar(format[i]);
-		}
+		_putchar(format[i]);
 		i++;
 	}
 	va_end(list);
