@@ -6,7 +6,7 @@
 #include "main.h"
 
 /**
- * formatter -  function that finds formats for _printf
+ * printer -  function that finds formats for _printf
  * @i: variable
  * @args: argument
  * Return: NULL

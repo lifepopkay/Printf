@@ -9,8 +9,9 @@
  * @format: string to be printed
  * @...: variables to be added in string
  *
- * Return:the number of characters printed (excluding the null byte)
+ * Return: the number of characters printed (excluding the null byte)
  */
+
 int _printf(const char *format, ...)
 {
 	va_list args;
