@@ -12,7 +12,7 @@
  * Return: NULL
  */
 
-int print(char i, va_list args)
+int printer(char i, va_list args)
 {
 	char *ss;
 	char c, nts[20];

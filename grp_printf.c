@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 			while (loct == -2)
 			{
 				count++;
-				loct = print(format[++i], args);
+				loct = printer(format[++i], args);
 			}
 			if (loct == -1)
 				return (-1);
