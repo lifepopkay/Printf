@@ -29,6 +29,19 @@ void print_string(va_list *list)
 }
 
 /**
+ * print_integer - takes the format to
+ * print integer
+ * @list: integer to print
+ */
+
+void print_integer(va_list *list)
+{
+	int s = va_arg(*list, int);
+
+	_putchar(s);
+}
+
+/**
  * print_percent - takes the format to
  * print percent
  * @list: character to print
@@ -54,6 +67,8 @@ int _printf(const char *format, ...)
 		{'c', print_character},
 		{'s', print_string},
 		{'%', print_percent},
+		{'d', print_integer},
+		{'i', print_integer},
 		{'\0', NULL}
 	};
 

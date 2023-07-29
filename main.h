@@ -20,4 +20,8 @@ typedef struct printing
 
 int _printf(const char *format, ...);
 
+int printer(char i, va_list args);
+int _strlen(char *str);
+char *num_to_string(int num, char *str);
+
 #endif
